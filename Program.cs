@@ -7,15 +7,14 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             List<int> myNumberList = new List<int>();
-
-            Console.WriteLine("Sage mir wieviele Zahlen du in deine Liste hinzufügen möchtest!");
-            int amountNumbers = Convert.ToInt32(Console.ReadLine());
-
-            while(myNumberList.Count < amountNumbers)
+            int user_zahl = 0;
+            do
             {
+                //code block
                 Console.WriteLine("Gebe mir eine Zahl");
-                myNumberList.Add(Convert.ToInt32(Console.ReadLine()));
-            }
+                user_zahl = Convert.ToInt32(Console.ReadLine());
+                myNumberList.Add(user_zahl);
+            } while(user_zahl > 0);
 
             //Summiere alle zahlen auf
             int ergebnis = 0;
