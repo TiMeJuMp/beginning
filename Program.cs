@@ -6,9 +6,21 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            string example_text = "This is a test";
+            Console.WriteLine("Gebe mir deinen Namen!");
+            string name = Console.ReadLine();
 
-            example_text.
-        }
+            if(name.Length > 10) 
+            {
+                Console.WriteLine("Oh der Name ist aber lang");
+            }
+            else if (name.Length > 5 )
+            {
+                Console.WriteLine("der Name ist mittellang");
+            }
+            else
+            {
+                Console.WriteLine("Der ist ja kurz");
+            }
+        } 
     }
 }
