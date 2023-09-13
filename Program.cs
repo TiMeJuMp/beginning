@@ -13,7 +13,7 @@
 
             int alterInZehn = age + 10;
             
-            Console.WriteLine("Hello, " + name + " Dein Alter ist " + age + " In Zehn jahren bist du" + alterInZehn );
+            Console.WriteLine($"Hello, {name}! Dein Alter ist {age} In Zehn jahren bist du {alterInZehn}" );
         }
     }
 }
