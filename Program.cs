@@ -6,10 +6,36 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            string text = "AbcdAaAA";
+            string operators = "";
+            do{
+            Console.WriteLine("Gebe mir ein Rechenzeichen (+,-,*,/)");
 
-            //Count a in text
-            int count = text.Count(c => c == 'a' || c == 'A');
+            operators = Console.ReadLine();
+            }while(operators != "+" && operators != "-" && operators != "*" && operators != "/");
+
+            int zahl1 = 16;
+            int zahl2 = 32;
+
+            switch(operators) 
+            {
+                case "+":
+                    Console.WriteLine(zahl1+zahl2);
+                    break;
+                case "-":
+                    Console.WriteLine(zahl1 - zahl2);                    
+                    break;
+                case "*":
+                    Console.WriteLine(zahl1 * zahl2);
+                    break;
+                case "/":
+                    Console.WriteLine(zahl1/zahl2);
+                    break;
+                default:
+                    Console.WriteLine("Ich kenne diesen Operator nicht");
+                    break;
+            }
+
+
 
             //Aufgabe 1: Initialisiere 2 Zahlen und gebe die Summe auf der Console aus
             //Aufgabe 2: Lasse den Nutzer zwei Zahlen eingeben und gebe die Summe auf der Console aus
@@ -47,7 +73,30 @@ namespace HelloWorld
             //           => Wenn die Zahl durch 3 teilbar ist, gebe „Fizz“ aus    
             //           => Wenn die Zahl durch 5 teilbar ist, gebe „Buzz“ aus
             //           => Wenn die Zahl durch 3 und 5 teilbar ist, gebe „FizzBuzz“ aus
-            //           => Ansonsten die Zahl selbst                          
+            //           => Ansonsten die Zahl selbst
+
+            int zahl = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= zahl; i++)
+            {
+                if (i % 3 == 0 && i % 5 == 0)
+                {
+                    Console.WriteLine("FizzBuzz");
+                    continue;
+                }
+                else if (i % 3 == 0)
+                {
+                    Console.WriteLine("Fizz");
+                    continue;
+                }
+                else if (i % 5 == 0)
+                {
+                    Console.WriteLine("Buzz");
+                    continue;
+                }
+                Console.WriteLine(i);
+            }
+            
+
 
         }
     }
