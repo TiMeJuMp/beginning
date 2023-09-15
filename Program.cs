@@ -6,22 +6,21 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            //Frage den Nutzer wieviele Texte er in einem Array speichern will.
-            Console.WriteLine("Wieviele Texte willst du im Array speichern?");
-            int numero = Convert.ToInt32(Console.ReadLine());
-            //Initalisiere das Array in der gewünschten größe
-            string[] myText = new string[numero];
-            //Lasse den Nutzer das Array nacheinander mit Texten befüllen.
-            for(int i=0; i<numero;i++)
-            {
-                string text1 = Console.ReadLine();
-                myText[i] = text1;
-            }
-            //Gebe die Texte mit mindestens 20 Zeichen aus, fülle den Text mit Leerzeichen auf von Links wenn kleiner. 
-            foreach(string entry in myText)
-            {
-                Console.WriteLine(entry.PadLeft(20, ' '));
-            }
+            //Lasse dir 2 Zahlen geben und lasse den den Rest ausgeben. 
+            //lese Zahl 1 ein 
+            Console.WriteLine("Gebe Zahl1 ein");
+            int numero1 = Convert.ToInt32(Console.ReadLine());
+
+            //lese Zahl 2 ein
+            Console.WriteLine("Gebe Zahl2 ein");
+            int numero2 = Convert.ToInt32(Console.ReadLine());
+
+            //Mache eine Division mit Rest und speicher das Ergebnis in einer variablen
+            int rest = numero1 % numero2;
+
+            //Gebe den Text aus
+            //"Die Division von {zahl1} und {Zahl2} erzeugt den Rest XYZ"
+            Console.WriteLine($"Die Division von {numero1} und {numero2} erzeugt den Rest {rest}");
         }
     }
 }
