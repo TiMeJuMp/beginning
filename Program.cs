@@ -6,83 +6,34 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            string operators = "";
-            do{
-            Console.WriteLine("Gebe mir ein Rechenzeichen (+,-,*,/)");
+            // Aufgabe: Zahlenraten:
+            // Frage den Nutzer nach einer zahl zwischen 1 bis 100
+            // Erstelle eine RandomZahl => Hinweis 
+            Random random = new Random();
+            int numberToGuess = random.Next(0, 101);
 
-            operators = Console.ReadLine();
-            }while(operators != "+" && operators != "-" && operators != "*" && operators != "/");
+            Console.WriteLine("Bitte gebe eine Zahl ein, von welcher du denkst was die Zufallszahl ist.");
+            int userZahl = Convert.ToInt16(Console.ReadLine());
 
-            string zahl1 = Console.ReadLine();
-            string zahl2 = Console.ReadLine();
-
-
-            switch(operators) 
+            while(numberToGuess != userZahl)
             {
-                case "+":
-                    string ergebnis = AdditionWithReturn(zahl1,zahl2).ToString();
-                    ergebnis = ergebnis.PadLeft(16,' ');
-                    Console.WriteLine("Das ergebnis ist");
-                    Console.WriteLine(ergebnis);
-                    break;
-                case "-":
-                    Substract(zahl1, zahl2);
-                    break;
-                case "*":
-                    Multiply(zahl1, zahl2);
-                    break;
-                case "/":
-                    Division(zahl1, zahl2);
-                    break;
-                default:
-                    Console.WriteLine("Ich kenne diesen Operator nicht");
-                    break;
+                Console.WriteLine("Du hast die zahl nicht getroffen.");
+                if(userZahl > numberToGuess)
+                {
+                    Console.WriteLine("Die gesuchte Zahl ist kleiner als deine eingegebene!");
+                }
+                else
+                {
+                    Console.WriteLine("Die gesuchte Zahl ist größer als deine eingegebene!");
+                }
+                userZahl = Convert.ToInt16(Console.ReadLine());
             }
-        }
 
-        static int AdditionWithReturn(string zahl1, string zahl2)
-        {
-            int numero1 = Convert.ToInt32(zahl1);
-            int numero2 = Convert.ToInt32(zahl2);
+            Console.WriteLine("Du hast gewonnen!");
 
-            return numero1 + numero2;
-        }
-
-        static void Addition(string zahl1, string zahl2)
-        {
-            int numero1 = Convert.ToInt32(zahl1);
-            int numero2 = Convert.ToInt32(zahl2);
-            Console.WriteLine(numero1 + numero2);
-
-        }
-        static void Addition(int zahl1, int zahl2) 
-        {
-            Console.WriteLine(zahl1 + zahl2);
-        }
-
-        static void Substract(int zahl1, int zahl2)
-        {
-            Console.WriteLine(zahl1 - zahl2);
-        }
-
-        static void Substract(string zahl1, string zahl2)
-        {
-            int numero1 = Convert.ToInt32(zahl1);
-            int numero2 = Convert.ToInt32(zahl2);
-            Console.WriteLine(numero1 - numero2); 
-        }
-
-        static void Multiply(string zahl1, string zahl2)
-        {
-            int numero1 = Convert.ToInt32(zahl1);
-            int numero2 = Convert.ToInt32(zahl2);
-            Console.WriteLine(numero1 * numero2); 
-        }
-        static void Division(string zahl1, string zahl2)
-        {
-            int numero1 = Convert.ToInt32(zahl1);
-            int numero2 = Convert.ToInt32(zahl2);
-            Console.WriteLine(numero1 / numero2); 
+            //Überprüft die zahl ob es numberToGuess ist
+            //wenn ja => hat der Spieler gewonnen
+            //Wenn nein => sage ob die gesuchte Zahl kleiner oder größer als die eingegebene Zahl ist.
         }
     }
 }
